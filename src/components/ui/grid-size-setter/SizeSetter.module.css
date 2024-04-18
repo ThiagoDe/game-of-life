@@ -32,6 +32,12 @@
   width: 120px;
 }
 
+.error {
+  color: #fbb3c9;
+  font-size: large;
+  font-weight: bold;
+}
+
 .button {
   transition: all 1.4s ease-in-out ;
   background-image: linear-gradient(135deg, #538af6 0%, #716ef2 50%, #d56096 100%);

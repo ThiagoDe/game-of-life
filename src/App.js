@@ -11,7 +11,7 @@ import {
 import Controller from './components/controller/Controller'
 import Footer from './components/ui/footer/Footer'
 import SizeSetter from './components/ui/grid-size-setter/SizeSetter'
-import Cell from './components/cell/Cell'
+import Instructions from './components/ui/Instructions'
 
 function App() {
   const [grid, setGrid] = useState([])
@@ -90,10 +90,9 @@ function App() {
             gridSizeSetter={debounceSetRowsCols}
           />
         )}
-       
+       {!isRunning && (<Instructions />)}
       </main>
 
-      {/* <Footer /> */}
     </div>
   )
 }
