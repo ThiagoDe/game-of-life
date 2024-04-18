@@ -62,3 +62,27 @@ const countNeighbors = (grid, row, col) => {
   })
   return count
 }
+
+
+export function isGridEmpty(grid) {
+  for (let row of grid) {
+    for (let cell of row) {
+      if (cell === true) {
+        return false 
+      }
+    }
+  }
+  return true 
+}
+
+// Debounce utility function
+export const debounce = (func, wait) => {
+  let timeout
+  return  (...args) => {
+    const context = this
+    clearTimeout(timeout)
+    timeout = setTimeout(() => {
+      func.apply(context, args)
+    }, wait)
+  }
+}

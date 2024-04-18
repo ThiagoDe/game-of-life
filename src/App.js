@@ -1,17 +1,38 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback, useMemo } from 'react'
 import './App.css'
 import Grid from './components/grid/Grid'
-import { generateEmptyGrid, generateRandomGrid, nextGeneration } from './utils/gridUtils'
+import {
+  debounce,
+  generateEmptyGrid,
+  generateRandomGrid,
+  isGridEmpty,
+  nextGeneration,
+} from './utils/gridUtils'
 import Controller from './components/controller/Controller'
 import Footer from './components/ui/footer/Footer'
 import SizeSetter from './components/ui/grid-size-setter/SizeSetter'
+import Cell from './components/cell/Cell'
 
 function App() {
   const [grid, setGrid] = useState([])
   const [isRunning, setIsRunning] = useState(false)
   const [generation, setGeneration] = useState(0)
   const [{ rows, cols }, setRowsCols] = useState({ rows: 20, cols: 45 })
-  
+
+  // Memoized nextGeneration function
+  const memoizedNextGeneration = useMemo(() => nextGeneration, [])
+
+  // Debounced setRowsCols function
+  const debounceSetRowsCols = useCallback(
+    debounce((newSize) => {
+      setRowsCols(newSize)
+    }, 300),
+    []
+  )
+
+  // Resettable condition
+  const isResettable =
+    grid.length && (rows !== 20 || cols !== 45 || !isGridEmpty(grid))
 
   useEffect(() => {
     setGrid(generateEmptyGrid(rows, cols))
@@ -22,12 +43,13 @@ function App() {
 
     if (isRunning) {
       intervalId = setInterval(() => {
-        setGrid((prevGrid) => nextGeneration(prevGrid))
+        setGrid((prevGrid) => memoizedNextGeneration(prevGrid))
         setGeneration((prevGeneration) => prevGeneration + 1)
       }, 1000)
     }
+
     return () => clearInterval(intervalId)
-  }, [isRunning])
+  }, [isRunning, memoizedNextGeneration])
 
   const handleStopStart = () => {
     setIsRunning(!isRunning)
@@ -36,6 +58,7 @@ function App() {
   const handleReset = () => {
     setGrid(generateEmptyGrid(rows, cols))
     setGeneration(0)
+    setIsRunning(false)
   }
 
   const handleRandom = () => {
@@ -55,13 +78,22 @@ function App() {
         onStartStop={handleStopStart}
         onReset={handleReset}
         isRunning={isRunning}
+        isResettable={isResettable}
         generation={generation}
         onRandom={handleRandom}
-    
       />
-      <Grid grid={grid} toggleCell={toggleCell} />
-      <SizeSetter defaultSize={{ rows, cols }} gridSizeSetter={setRowsCols} />
-      <Footer />
+      <main className="main">
+        <Grid grid={grid} toggleCell={toggleCell} />
+        {!isRunning && (
+          <SizeSetter
+            defaultSize={{ rows, cols }}
+            gridSizeSetter={debounceSetRowsCols}
+          />
+        )}
+       
+      </main>
+
+      {/* <Footer /> */}
     </div>
   )
 }

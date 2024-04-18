@@ -15,7 +15,10 @@ export default function Grid({ grid, toggleCell }) {
               <Cell
                 key={`${i} - ${j}`}
                 isAlive={cell}
-                onClick={() => toggleCell(i, j)}
+                onClick={() => {
+                  toggleCell(i, j)
+                  console.log(i, j)
+                }}
               />
             ))}
           </div>
