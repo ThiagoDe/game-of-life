@@ -71,7 +71,7 @@ export default function SizeSetter({ defaultSize, gridSizeSetter }) {
           }}
           className={s.button}
         >
-          Set
+          SET
         </button>
       </div>
         {errorMsg && (<p className={s.error}>Chose a number between 4 and 150</p>)}

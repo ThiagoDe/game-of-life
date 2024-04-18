@@ -10,28 +10,33 @@ export default function Controller({
   onRandom,
 }) {
   return (
-    <div className={s.controller}>
-      <div className={s.title}>
-        <img src="/logo.svg" alt="Logo" />
-        <div>
-          <div>Conway's Game of Life</div>
+    <div className={s['controller-container']}>
+      <div className={s.controller}>
+        <div className={s.title}>
+          <img src="/logo.svg" alt="Logo" />
+          <div>
+            <div>CONWAY'S GAME OF LIFE</div>
+          </div>
         </div>
+        <div className={s.buttons}>
+          <button className={s.button} onClick={onRandom}>
+            RANDOM
+          </button>
+          <button
+            disabled={!isResettable}
+            className={s.button}
+            onClick={onStartStop}
+          >
+            {isRunning ? 'PAUSE' : 'PLAY'}
+          </button>
+          {isResettable && (
+            <button className={s.button} onClick={onReset}>
+              RESET
+            </button>
+          )}
+        </div>
+        {isRunning && <p className={s.generation}>Generation: {generation}</p>}
       </div>
-      <div className={s.buttons}>
-
-      <button className={s.button} onClick={onRandom}>
-        Random
-      </button>
-      <button disabled={!isResettable} className={s.button} onClick={onStartStop}>
-        {isRunning ? 'Pause' : 'Play'}
-      </button>
-      {isResettable && (
-        <button className={s.button} onClick={onReset}>
-          Reset
-        </button>
-      )}
-      </div>
-      {isRunning && <p className={s.generation}>Generation: {generation}</p>}
     </div>
   )
 }
