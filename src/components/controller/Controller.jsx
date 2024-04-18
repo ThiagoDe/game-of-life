@@ -14,21 +14,23 @@ export default function Controller({
       <div className={s.title}>
         <img src="/logo.svg" alt="Logo" />
         <div>
-          <h3>Conway's Game of Life</h3>
-          <p>Quest: life's equilibrium</p>
+          <div>Conway's Game of Life</div>
         </div>
       </div>
+      <div className={s.buttons}>
+
       <button className={s.button} onClick={onRandom}>
         Random
       </button>
-      {isResettable && <button className={s.button} onClick={onStartStop}>
+      <button disabled={!isResettable} className={s.button} onClick={onStartStop}>
         {isRunning ? 'Pause' : 'Play'}
-      </button>}
+      </button>
       {isResettable && (
         <button className={s.button} onClick={onReset}>
           Reset
         </button>
       )}
+      </div>
       {isRunning && <p className={s.generation}>Generation: {generation}</p>}
     </div>
   )

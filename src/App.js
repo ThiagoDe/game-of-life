@@ -9,7 +9,6 @@ import {
   nextGeneration,
 } from './utils/gridUtils'
 import Controller from './components/controller/Controller'
-import Footer from './components/ui/footer/Footer'
 import SizeSetter from './components/ui/grid-size-setter/SizeSetter'
 import Instructions from './components/ui/Instructions'
 
@@ -39,6 +38,14 @@ function App() {
   }, [rows, cols])
 
   useEffect(() => {
+    if (generation > 0) {
+      if (isGridEmpty(grid)) {
+        handleReset()
+      }
+    }
+  }, [generation])
+
+  useEffect(() => {
     let intervalId
 
     if (isRunning) {
@@ -59,6 +66,7 @@ function App() {
     setGrid(generateEmptyGrid(rows, cols))
     setGeneration(0)
     setIsRunning(false)
+    setRowsCols({ rows: 20, cols: 45 })
   }
 
   const handleRandom = () => {
@@ -83,6 +91,7 @@ function App() {
         onRandom={handleRandom}
       />
       <main className="main">
+      <Instructions/>
         <Grid grid={grid} toggleCell={toggleCell} />
         {!isRunning && (
           <SizeSetter
@@ -90,9 +99,7 @@ function App() {
             gridSizeSetter={debounceSetRowsCols}
           />
         )}
-       {!isRunning && (<Instructions />)}
       </main>
-
     </div>
   )
 }

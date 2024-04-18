@@ -1,6 +1,7 @@
 .size-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
   padding: 1rem;
 }
@@ -8,21 +9,27 @@
 .size-setter {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 3.5rem;
   color: white;
   font-size: large;
   font-weight: bold;
 }
 
 .size-setter input {
-  width: 50px;
-  height: 30px;
+  width: 80px;
+  height: 35px;
   text-align: center;
-  font-size: large;
+  font-size:x-large;
   font-weight: bold;
   color: white;
   background-color: transparent;
   border: 1px solid white;
+  padding: 0.2rem 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.size-setter label {
+  font-size: x-large;
 }
 
 .size-setter div {

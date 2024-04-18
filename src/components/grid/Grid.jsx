@@ -17,7 +17,6 @@ export default function Grid({ grid, toggleCell }) {
                 isAlive={cell}
                 onClick={() => {
                   toggleCell(i, j)
-                  console.log(i, j)
                 }}
               />
             ))}
