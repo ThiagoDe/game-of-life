@@ -19,6 +19,7 @@ export default function Controller({
           <img src="/logo.svg" alt="Logo" />
           <div>
             <div>CONWAY'S GAME OF LIFE</div>
+            <p style={{fontSize: 'small'}}>2024 by Thiago Moura</p>
           </div>
         </div>
         <div className={s.buttons}>
