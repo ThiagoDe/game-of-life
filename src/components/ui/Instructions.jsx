@@ -6,14 +6,14 @@ export default function Instructions({ generation, isRunning, handleRandom}) {
     <div className="instructions-container">
       <div className="instructions">
         {isRunning ? (
-          <p className=".generation">Generation: {generation}</p>
+          <p className="generation">Generation: {generation}</p>
         ) : (
-          <>
-            <p>Set initial state and play</p>
+          <div className='call-to-action'>
+            <p>Set initial state manually or</p>
             <p className="arrow-button" onClick={handleRandom}>
-              Generate random grid {' →'}
+              randomly {' →'}
             </p>
-          </>
+          </div>
         )}
         <div className="cell-info">
           <p>Dead </p>

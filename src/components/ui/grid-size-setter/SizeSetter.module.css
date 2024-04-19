@@ -15,11 +15,12 @@
 }
 
 .size-setter input {
-  height: 43px;
+  height: 40px;
+  width: 60px;
   text-align: center;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
-  padding: 12px 30px;
+  padding: 0.2rem 1rem;
   font-weight: bold;
   color: white;
   background-color: transparent;
@@ -47,7 +48,7 @@
 .button {
   background-color: white;
   color: var(--primary-color);
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
   padding: 12px 30px;
   border: none;

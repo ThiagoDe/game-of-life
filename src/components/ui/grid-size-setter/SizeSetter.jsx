@@ -8,36 +8,28 @@ export default function SizeSetter({ defaultSize, gridSizeSetter }) {
 
   const handleRowChange = (e) => {
     const value = Number(e.target.value)
-    if (value > 150) {
-      setErrorMsg(true)
-      setRows(150)
-      return
-    }
-    if (value <= 4) {
-      setRows(4)
-      setErrorMsg(true)
-      return
-
-    }
-    setRows(value)
     setErrorMsg(false)
+    if (value > 150 || value < 4) {
+      setErrorMsg(true)
+    }
+    setRows(parseInt(value, 10))
   }
 
-    const handleColChange = (e) => {
-      const value = Number(e.target.value)
-      if (value > 150) {
-        setErrorMsg(true)
-        setCols(150)
-        return
-      }
-      if (value <= 4) {
-        setCols(4)
-        setErrorMsg(true)
-        return
-      }
-      setCols(value)
-      setErrorMsg(false)
+  const handleColChange = (e) => {
+    const value = Number(e.target.value)
+    setErrorMsg(false)
+    if (value > 150 || value < 4) {
+      setErrorMsg(true)
     }
+    setCols(value)
+  }
+  const handleSizeSetter = () => {
+    const validRows = Math.max(4, Math.min(rows, 150))
+    const validCols = Math.max(4, Math.min(cols, 150))
+    setRows(validRows)
+    setCols(validCols)
+    gridSizeSetter({ rows: validRows, cols: validCols })
+  }
 
   return (
     <div className={s['size-container']}>
@@ -48,9 +40,7 @@ export default function SizeSetter({ defaultSize, gridSizeSetter }) {
             onChange={handleRowChange}
             type="number"
             id="rows"
-            value={rows}
-            max={150}
-            min={4}
+            value={rows || null}
           />
         </div>
         <div>
@@ -59,22 +49,19 @@ export default function SizeSetter({ defaultSize, gridSizeSetter }) {
             onChange={handleColChange}
             type="number"
             id="cols"
-            value={cols}
-            max={150}
-            min={4}
+            value={cols || null}
           />
         </div>
         <button
           onClick={() => {
-            gridSizeSetter({ rows, cols })
-            console.log(rows, cols)
+            handleSizeSetter()
           }}
           className={s.button}
         >
           SET
         </button>
       </div>
-        {errorMsg && (<p className={s.error}>Choose a number between 4 and 150</p>)}
+      {errorMsg && <p className={s.error}>Choose a number between 4 and 150</p>}
     </div>
   )
 }
