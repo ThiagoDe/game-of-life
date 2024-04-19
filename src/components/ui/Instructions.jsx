@@ -1,6 +1,11 @@
 import React from 'react'
 import Cell from '../cell/Cell'
 
+/**
+ * Component for displaying instructions and game information.
+ * Shows the current generation count, prompts for setting initial state or generating random state.
+ */
+
 export default function Instructions({ generation, isRunning, handleRandom}) {
   return (
     <div className="instructions-container">

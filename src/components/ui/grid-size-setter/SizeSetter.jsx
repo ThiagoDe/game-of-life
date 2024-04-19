@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 import s from './SizeSetter.module.css'
 
+/**
+ * Component for setting the size of the grid for the Game of Life simulation.
+ * Allows users to input the number of rows and columns.
+ */
+
 export default function SizeSetter({ defaultSize, gridSizeSetter }) {
   const [rows, setRows] = useState(defaultSize.rows)
   const [cols, setCols] = useState(defaultSize.cols)
@@ -23,6 +28,7 @@ export default function SizeSetter({ defaultSize, gridSizeSetter }) {
     }
     setCols(value)
   }
+
   const handleSizeSetter = () => {
     const validRows = Math.max(4, Math.min(rows, 150))
     const validCols = Math.max(4, Math.min(cols, 150))

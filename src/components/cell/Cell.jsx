@@ -1,6 +1,8 @@
 import React from 'react'
 import s from './Cell.module.css'
 
+// Responsible for rendering a cell
+
 export default function Cell({ isAlive, onClick }) {
   return (
     <div

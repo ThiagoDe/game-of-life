@@ -1,6 +1,11 @@
 import React from 'react'
 import s from './Controller.module.css'
 
+/**
+ * Component for controlling the Game of Life simulation.
+ * Allows starting, pausing, and resetting the simulation.
+ */
+
 export default function Controller({
   onStartStop,
   onReset,

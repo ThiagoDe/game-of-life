@@ -1,22 +1,4 @@
-export const generateEmptyGrid = (rows, cols) => {
-  const grid = []
-  for (let i = 0; i < rows; i++) {
-    grid.push(Array.from(Array(cols), () => false))
-  }
-  return grid
-}
-
-export const generateRandomGrid = (row, col) => {
-  const grid = []
-  for (let i = 0; i < row; i++) {
-    grid[i] = []
-    for (let j = 0; j < col; j++) {
-      grid[i][j] = Math.random() < 0.3
-    }
-  }
-  return grid
-}
-
+// Computes the next generation of the grid. It doesn't modify the original grid.
 export const nextGeneration = (grid) => {
   if (!grid || !grid.length || !grid[0].length) {
     return grid
@@ -36,6 +18,25 @@ export const nextGeneration = (grid) => {
     }
   }
   return newGrid
+}
+
+export const generateEmptyGrid = (rows, cols) => {
+  const grid = []
+  for (let i = 0; i < rows; i++) {
+    grid.push(Array.from(Array(cols), () => false))
+  }
+  return grid
+}
+
+export const generateRandomGrid = (row, col) => {
+  const grid = []
+  for (let i = 0; i < row; i++) {
+    grid[i] = []
+    for (let j = 0; j < col; j++) {
+      grid[i][j] = Math.random() < 0.3
+    }
+  }
+  return grid
 }
 
 const deltas = [
@@ -63,22 +64,21 @@ const countNeighbors = (grid, row, col) => {
   return count
 }
 
-
 export function isGridEmpty(grid) {
   for (let row of grid) {
     for (let cell of row) {
       if (cell === true) {
-        return false 
+        return false
       }
     }
   }
-  return true 
+  return true
 }
 
 // Debounce utility function
 export const debounce = (func, wait) => {
   let timeout
-  return  (...args) => {
+  return (...args) => {
     const context = this
     clearTimeout(timeout)
     timeout = setTimeout(() => {
