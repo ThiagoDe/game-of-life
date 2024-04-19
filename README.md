@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+[//]: # (FILEPATH: /Users/thiagommoura/Developer/projects-pro/game-of-life/README.md)
+Game of Life in React
+Welcome to the Game of Life implementation in React! 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Introduction
+The Game of Life is a cellular automaton devised by the British mathematician John Horton Conway in 1970. It's played on a grid of cells, each of which can be either alive or dead. The game progresses through generations, with cells changing state according to specific rules.
 
-## Available Scripts
+To learn more about Conway's Game of Life, visit Wikipedia.
 
-In the project directory, you can run:
+Requirements
+The basic functionalities required for this implementation are:
 
-### `npm start`
+Playable grid: Users can toggle cells between alive and dead using the mouse.
+Automatic progression: The game progresses through generations automatically based on the Game of Life rules.
+Pause/play button: Allows users to pause and resume the game.
+Reset button: Resets the grid to its initial state.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Additional Features
+Random grid generation: create a grid of cells with random states.
+Customize Grid Size: By default, the grid comprises 20 rows and 45 columns. However, you have the flexibility to tailor it to your needs, adjusting the dimensions from as small as 4 to as expansive as 150 rows and columns.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Getting Started
+To get started with the project, follow these steps:
 
-### `npm test`
+1. Clone this repository to your local machine.
+2. Install dependencies by running `npm install` or `yarn install`.
+3. Start the development server by running `npm start` or `yarn start`.
+4. Begin implementing the required features and any additional functionalities you wish to add.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Folder Structure
+- public: Contains the HTML template and other static assets.
+- src: Contains the React components and application logic.
+    - components: Holds the individual components of the application.
+    - App.js: The main component that renders the entire application.
+    - index.js: Entry point of the application.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Technologies Used
+- React
+- JavaScript/ES6
+- HTML/CSS
