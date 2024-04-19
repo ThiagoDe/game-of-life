@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  padding: 1rem;
 }
 
 .size-setter {
@@ -16,20 +15,20 @@
 }
 
 .size-setter input {
-  width: 80px;
-  height: 35px;
+  height: 43px;
   text-align: center;
-  font-size:x-large;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 12px 30px;
   font-weight: bold;
   color: white;
   background-color: transparent;
   border: 1px solid white;
-  padding: 0.2rem 0.5rem;
   margin-left: 0.5rem;
 }
 
 .size-setter label {
-  font-size: x-large;
+  font-size: 18px;
 }
 
 .size-setter div {
@@ -46,19 +45,16 @@
 }
 
 .button {
-  transition: all 1.4s ease-in-out ;
-  background-image: linear-gradient(135deg, #538af6 0%, #716ef2 50%, #d56096 100%);
-  color: white;
+  background-color: white;
+  color: var(--primary-color);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 12px 30px;
   border: none;
-  padding: 0.2rem 1rem;
-  font-size: large;
-  font-weight: bold;
-  border-radius: 32px;
-  height: 40px;
-  min-width: 85px;
+  border-radius: 0.5rem;
 }
 
 .button:hover {
   cursor: pointer;
-  background-image: linear-gradient(135deg, #6696f7 0%, #716ef2 50%, #538af6 100%);
+  opacity: 0.8;
 }

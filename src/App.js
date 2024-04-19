@@ -88,10 +88,9 @@ function App() {
         isRunning={isRunning}
         isResettable={isResettable}
         generation={generation}
-        onRandom={handleRandom}
       />
       <main className="main">
-      <Instructions/>
+        <Instructions isRunning={isRunning} generation={generation} handleRandom={handleRandom}/>
         <Grid grid={grid} toggleCell={toggleCell} />
         {!isRunning && (
           <SizeSetter

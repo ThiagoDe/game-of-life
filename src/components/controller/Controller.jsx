@@ -6,8 +6,6 @@ export default function Controller({
   onReset,
   isRunning,
   isResettable,
-  generation,
-  onRandom,
 }) {
   return (
     <div className={s['controller-container']}>
@@ -19,9 +17,11 @@ export default function Controller({
           </div>
         </div>
         <div className={s.buttons}>
-          <button className={s.button} onClick={onRandom}>
-            RANDOM
-          </button>
+          {isResettable && (
+            <button className={s.button} onClick={onReset}>
+              RESET
+            </button>
+          )}
           <button
             disabled={!isResettable}
             className={s.button}
@@ -29,13 +29,7 @@ export default function Controller({
           >
             {isRunning ? 'PAUSE' : 'PLAY'}
           </button>
-          {isResettable && (
-            <button className={s.button} onClick={onReset}>
-              RESET
-            </button>
-          )}
         </div>
-        {isRunning && <p className={s.generation}>Generation: {generation}</p>}
       </div>
     </div>
   )

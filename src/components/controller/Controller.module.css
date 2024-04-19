@@ -8,6 +8,7 @@ color: #586171 ;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
   padding: 1rem;
   max-width: 1300px;
@@ -26,16 +27,14 @@ color: #586171 ;
   font-weight: bold;
 }
 
-.controller img {
-  height: 80px;
-}
+
 
 .title {
   text-align: center;
   display: flex;
   gap: 3rem;
   align-items: center;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: bold;
   margin-right: 1.5rem;
 }
@@ -49,7 +48,7 @@ color: #586171 ;
   padding: 0.2rem 1rem;
   font-weight: bold;
   border-radius: 32px;
-  font-size: 12px;
+  font-size: 15px;
   height: 40px;
   min-width: 85px;
 }
@@ -60,14 +59,8 @@ color: #586171 ;
 }
 
 .buttons {
-  flex-grow: 1;
   display: flex;
   gap: 1rem;
 }
 
-.generation {
-  font-size: large;
-  font-weight: bold;
-  color: white;
-  width: 100px;
-}
+
