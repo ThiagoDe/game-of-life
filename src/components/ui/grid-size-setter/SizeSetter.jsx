@@ -44,7 +44,7 @@ export default function SizeSetter({ defaultSize, gridSizeSetter }) {
           />
         </div>
         <div>
-          <label htmlFor="cols">Cols:</label>
+          <label htmlFor="cols">Columns:</label>
           <input
             onChange={handleColChange}
             type="number"

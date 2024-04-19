@@ -28,6 +28,10 @@
   margin-left: 0.5rem;
 }
 
+.size-setter button {
+  margin-left: 2.5rem;
+}
+
 .size-setter label {
   font-size: 18px;
 }

@@ -9,7 +9,7 @@ export default function Instructions({ generation, isRunning, handleRandom}) {
           <p className="generation">Generation: {generation}</p>
         ) : (
           <div className='call-to-action'>
-            <p>Set initial state manually or</p>
+            <p>{`Set ${generation === 0 ? 'initial': ''} state manually or`}</p>
             <p className="arrow-button" onClick={handleRandom}>
               randomly {' →'}
             </p>

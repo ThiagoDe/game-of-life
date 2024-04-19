@@ -17,6 +17,7 @@
 
 .controller button[disabled] {
   background-color: #d1d5db;
+  opacity: 0.8;
   cursor: not-allowed;
 }
 
@@ -62,6 +63,45 @@
     #716ef2 50%,
     #538af6 100%
   );
+}
+
+.button:hover + .box {
+  display: block;
+}
+
+.box {
+  display: none;
+  margin: 40px;
+  float: left;
+  color: var(--primary-color);
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  top: 110px;
+  border-top-right-radius: 0;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 0.5rem;
+  z-index: 99;
+  margin-left: 20px;
+}
+
+.box.arrow-top {
+  margin-top: 10px;
+}
+
+.box.arrow-top:after {
+  content: ' ';
+  position: absolute;
+  left: 10px;
+  top: -15px;
+  border-top: none;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-bottom: 15px solid white;
 }
 
 .buttons {

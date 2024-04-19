@@ -29,6 +29,12 @@ export default function Controller({
           >
             {isRunning ? 'PAUSE' : 'PLAY'}
           </button>
+
+          {!isResettable && (
+            <div className={`${s['box']} ${s['arrow-top']}`}>
+              <div>Set initial state to play</div>
+            </div>
+          )}
         </div>
       </div>
     </div>
