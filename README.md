@@ -2,6 +2,8 @@
 Game of Life in React
 Welcome to the Game of Life implementation in React! 
 
+Deployed version https://game-of-life-by-thiago.vercel.app/
+
 Introduction
 The Game of Life is a cellular automaton devised by the British mathematician John Horton Conway in 1970. It's played on a grid of cells, each of which can be either alive or dead. The game progresses through generations, with cells changing state according to specific rules.
 
